@@ -1,6 +1,16 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
+import {Aside} from '../styles/menuStyled'
 
 export default () =>
   <>
-    <h1> teste </h1>
+    <Aside>
+      <nav>
+        <ul>
+          <li> asdjo </li>
+        </ul>
+        <h1> aslkdjsa </h1>
+        <h1> aslkjdsa </h1>
+      </nav>
+    </Aside>
   </>
