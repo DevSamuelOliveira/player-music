@@ -1,16 +1,17 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
 import {Aside} from '../styles/menuStyled'
+import {FaHome, FaSearch, FaMusic} from 'react-icons/fa'
 
 export default () =>
   <>
-    <Aside>
+    <Aside className="teste">
       <nav>
         <ul>
-          <li> asdjo </li>
+          <a href="javascript:void(0)"><li> <FaHome className="FaHome"/> Início </li></a>
+          <a href="javascript:void(0)"><li> <FaSearch className="FaSearch"/> Buscar </li></a>
+          <a href="javascript:void(0)"><li> <FaMusic className="FaMusic"/> Minhas Playlist </li></a>
         </ul>
-        <h1> aslkdjsa </h1>
-        <h1> aslkjdsa </h1>
       </nav>
     </Aside>
   </>
