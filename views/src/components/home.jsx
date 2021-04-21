@@ -18,6 +18,8 @@ if (hour >= 6 && hour <= 12){
 export default () =>
   <>
     <Main>
-      <h3 className="msgTitle"> {msg} </h3>
+      <div className="homeContainer">
+        <h3 > {msg} </h3>
+      </div>
     </Main>
   </>

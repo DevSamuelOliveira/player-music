@@ -4,7 +4,7 @@ export default styled.main`
   grid-area: main;
   color: white;
   
-  .msgTitle{
+  .homeContainer{
     margin: 4vh 6vh;
   }
 `
