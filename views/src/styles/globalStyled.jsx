@@ -3,7 +3,7 @@ import styled, {createGlobalStyle} from 'styled-components'
 
 export default createGlobalStyle`
   :root{
-    --color-main: rgb(34, 34, 34);
+    --color-main: rgb(22, 22, 22);
   }
 
   *{

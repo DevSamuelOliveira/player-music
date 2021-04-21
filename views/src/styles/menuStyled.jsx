@@ -4,7 +4,7 @@ export const Aside = styled.aside`
 
   grid-area: aside;
   color: white;
-  background-color: rgb(12, 12, 12);
+  background-color: rgb(7, 7, 7);
   width: 100%;
   height: 100%;
 
