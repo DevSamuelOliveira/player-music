@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import styled, {createGlobalStyle} from 'styled-components'
 
 export default createGlobalStyle`
@@ -19,6 +20,7 @@ export default createGlobalStyle`
   .MainContainer{
     display: grid;
     grid-template-columns: 0.6fr 3fr;
+    grid-template-areas: "aside main";
     width: 100%;
     height: 100%;
   }
