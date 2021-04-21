@@ -9,6 +9,7 @@ function App() {
     <>
       <Menu/>
       <Home/>
+      {console.log("nova render")}
     </>
   )
 }
