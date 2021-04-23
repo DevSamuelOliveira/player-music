@@ -1,6 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
 import FooterPlayStyled from '../styles/footerPlayStyled'
+import infosMusics from '../infosMusics'
 
 function getLogoMusicJpg(){
   let music = document.getElementsByClassName('musicPlay')
@@ -12,11 +13,30 @@ function getLogoMusicJpg(){
   return string
 }
 
+function getTitleMusic(){
+  let name = getLogoMusicJpg()
+  name = name.split('logosMusic/')
+  name = name[1].replace('.jpg', '.mp3')
+
+  return infosMusics[name].title
+}
+
+function getAlbumArtist(){
+  let name = getLogoMusicJpg()
+  name = name.split('logosMusic/')
+  name = name[1].replace('.jpg', '.mp3')
+
+  let album = infosMusics[name].album
+  let artist = infosMusics[name].artist
+
+  return album + ', ' + artist
+}
+
 export default () =>
   <FooterPlayStyled>
     <img src={getLogoMusicJpg()} alt="Logo music"/>
     <div className="titles">
-      <p className="titleMusic"> teste </p>
-      <p className="titleArtist"> album, artist </p>
+      <p className="titleMusic"> {getTitleMusic()} </p>
+      <p className="titleArtist"> {getAlbumArtist()} </p>
     </div>
   </FooterPlayStyled>

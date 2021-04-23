@@ -26,12 +26,13 @@ export default styled.footer`
   }
 
   .titleMusic{
-    font-weight: bold;
+    font-weight: 400;
   }
 
   .titleArtist{
-    font-weight: 100;
+    font-weight: 200;
     font-size: 90%;
+    color: #a7a7a7;
   }
 
 `
