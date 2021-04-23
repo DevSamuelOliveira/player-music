@@ -33,6 +33,31 @@ export default styled.footer`
     font-weight: 200;
     font-size: 90%;
     color: #a7a7a7;
+    white-space: nowrap;
+  }
+
+  .playMenu{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  progress{
+    margin: auto 16vh;
+    height: 0.7vh;
+    width: 80vh;
+    -webkit-appearance: none;
+  }
+
+  progress::-webkit-progress-bar {
+    background-color: rgb(90, 90, 90);
+    border-radius: 0.4vh;
+  }
+
+  progress::-webkit-progress-value {
+    background-color: rgb(189, 189, 189);
+    border-radius: 0.4vh;
   }
 
 `

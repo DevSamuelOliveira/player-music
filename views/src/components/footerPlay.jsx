@@ -32,6 +32,10 @@ function getAlbumArtist(){
   return album + ', ' + artist
 }
 
+function getTimeFullMusic(){
+
+}
+
 export default () =>
   <FooterPlayStyled>
     <img src={getLogoMusicJpg()} alt="Logo music"/>
@@ -39,4 +43,7 @@ export default () =>
       <p className="titleMusic"> {getTitleMusic()} </p>
       <p className="titleArtist"> {getAlbumArtist()} </p>
     </div>
-  </FooterPlayStyled>
+    <div className="playMenu">
+      <progress min="0" max="100" value="66"> </progress>
+    </div>
+  </FooterPlayStyled> 
