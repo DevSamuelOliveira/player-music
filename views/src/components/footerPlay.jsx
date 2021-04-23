@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import React from 'react'
+import React, {useState} from 'react'
 import FooterPlayStyled from '../styles/footerPlayStyled'
 import infosMusics from '../infosMusics'
 
@@ -32,18 +32,70 @@ function getAlbumArtist(){
   return album + ', ' + artist
 }
 
-function getTimeFullMusic(){
+function getTotalTimeMusic(){
+  let music = document.getElementsByClassName('musicPlay')
 
+  let data = new Date(null)
+  data.setSeconds(music[0].duration)
+  let duracao = data.toISOString().substr(12, 8)
+  duracao = duracao.split('.')
+  duracao = duracao[0]
+  duracao = duracao.split(':')
+  duracao = duracao[1] + ':' + duracao[2]
+
+  return duracao
 }
 
-export default () =>
-  <FooterPlayStyled>
-    <img src={getLogoMusicJpg()} alt="Logo music"/>
-    <div className="titles">
-      <p className="titleMusic"> {getTitleMusic()} </p>
-      <p className="titleArtist"> {getAlbumArtist()} </p>
-    </div>
-    <div className="playMenu">
-      <progress min="0" max="100" value="66"> </progress>
-    </div>
-  </FooterPlayStyled> 
+function getMaxTimeMusicInSeconds(){
+  let music = document.getElementsByClassName('musicPlay')
+
+  let data = new Date(null)
+  data.setSeconds(music[0].duration)
+  let duracao = data.toISOString().substr(12, 8)
+  duracao = duracao.split('.')
+  duracao = duracao[0]
+  duracao = duracao.split(':')
+  duracao = duracao[1] + duracao[2]
+
+  return duracao
+}
+
+function getTimeNow(){
+  let music = document.getElementsByClassName('musicPlay')
+
+  let data = new Date(null)
+  data.setSeconds(music[0].currentTime)
+  let duracao = data.toISOString().substr(12, 8)
+  duracao = duracao.split('.')
+  duracao = duracao[0]
+  duracao = duracao.split(':')
+  duracao = duracao[1] + ':' + duracao[2]
+
+  return duracao
+}
+
+export default () => {
+
+  const [seconds, setSeconds] = useState(0)
+  const [timeNow, setTimeNow] = useState(0)
+
+  setInterval(() =>{
+    setSeconds(document.getElementsByClassName('musicPlay')[0].currentTime)
+    setTimeNow(getTimeNow())
+  })
+
+  return(
+    <FooterPlayStyled>
+      <img src={getLogoMusicJpg()} alt="Logo music"/>
+      <div className="titles">
+        <p className="titleMusic"> {getTitleMusic()} </p>
+        <p className="titleArtist"> {getAlbumArtist()} </p>
+      </div>
+      <div className="playMenu">
+        <div className="progressContainer">
+          <span> {timeNow} </span> <progress max={getMaxTimeMusicInSeconds()} value={seconds}> </progress> <span> {getTotalTimeMusic()} </span>
+        </div>
+      </div>
+    </FooterPlayStyled>
+  )
+}

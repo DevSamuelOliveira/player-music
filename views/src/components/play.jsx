@@ -14,7 +14,7 @@ window.onload = () =>{
 
     let music = document.getElementsByClassName('musicPlay')
     console.log(music)
-    // music[0].play(); 
+    music[0].play(); 
   }
 }
 

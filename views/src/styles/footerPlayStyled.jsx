@@ -41,10 +41,21 @@ export default styled.footer`
     flex-direction: column;
     width: 100%;
     height: 100%;
+    margin-left: 18vh;
+  }
+
+  .progressContainer{
+    margin: auto 0;
+  }
+
+  span{
+    font-size: 70%;
+    font-weight: 100;
+    color:rgb(189, 189, 189)
   }
 
   progress{
-    margin: auto 16vh;
+    margin: auto 1vh;
     height: 0.7vh;
     width: 80vh;
     -webkit-appearance: none;
