@@ -9,6 +9,7 @@ export const Aside = styled.aside`
   height: 100%;
 
   nav{
+    margin-top: 2vh;
     display: flex;
     flex-direction: column;
   }

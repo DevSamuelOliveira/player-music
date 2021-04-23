@@ -48,6 +48,7 @@ export default () =>
             <p> Para treinar </p>
             <a href="#" className="btnForTraining">&#9656;</a>
           </div>
+
         </div>
       </div>
     </Main>

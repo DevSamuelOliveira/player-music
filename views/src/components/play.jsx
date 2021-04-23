@@ -1,10 +1,19 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
-import phoenixCoverTjBrownAndLunity from './music/phoenix_league_of_legends_acoustic_tj_brown_lunity_4284560954436008959.mp3'
+import ReactDOM from 'react-dom';
+import phoenixCoverTjBrownAndLunity from './music/phoenixLolAcousticTjbrownLunity.mp3'
+import FooterPlay from './footerPlay'
 
 window.onload = () =>{  
   document.getElementsByClassName('btnMostPlayed')[0].onclick = function(){
-    document.getElementsByClassName('musicPlay')[0].play();
+
+    ReactDOM.render(
+      <React.StrictMode>
+        <FooterPlay/>
+      </React.StrictMode>, document.getElementById('footerPlay'))
+
+    let music = document.getElementsByClassName('musicPlay')
+    // music[0].play(); 
   }
 }
 
