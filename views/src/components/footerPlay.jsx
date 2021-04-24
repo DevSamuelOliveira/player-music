@@ -79,9 +79,16 @@ export default () => {
   const [seconds, setSeconds] = useState(0)
   const [timeNow, setTimeNow] = useState(0)
 
-  setInterval(() =>{
-    setSeconds(document.getElementsByClassName('musicPlay')[0].currentTime)
+  let time = setInterval(() =>{
+    let music = document.getElementsByClassName('musicPlay')
+    setSeconds(music[0].currentTime)
     setTimeNow(getTimeNow())
+
+    document.getElementsByClassName('range')[0].value = music[0].currentTime
+
+    if(music[0].paused){
+      clearInterval(time)
+    }
   })
 
   return(
@@ -93,7 +100,7 @@ export default () => {
       </div>
       <div className="playMenu">
         <div className="progressContainer">
-          <span> {timeNow} </span> <progress max={getMaxTimeMusicInSeconds()} value={seconds}> </progress> <span> {getTotalTimeMusic()} </span>
+          <span> {timeNow} </span> <input className="range" type="range" step="any" min="0" max={getMaxTimeMusicInSeconds()}/> <span> {getTotalTimeMusic()} </span>
         </div>
       </div>
     </FooterPlayStyled>

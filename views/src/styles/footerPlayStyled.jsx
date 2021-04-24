@@ -54,21 +54,32 @@ export default styled.footer`
     color:rgb(189, 189, 189)
   }
 
-  progress{
-    margin: auto 1vh;
-    height: 0.7vh;
-    width: 80vh;
+  .range{
     -webkit-appearance: none;
+    margin: 0 1vh;
+    margin-top: 5vh;
+    width: 75vh;
+    height: 1vh;
+    background-color: rgb(85, 85, 85);
+    border-radius: 1vh;
   }
 
-  progress::-webkit-progress-bar {
-    background-color: rgb(90, 90, 90);
-    border-radius: 0.4vh;
+  .range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: rgb(150, 145, 145);
+    width: 2vh;
+    height: 2vh;
+    border-radius: 50%;
   }
 
-  progress::-webkit-progress-value {
-    background-color: rgb(189, 189, 189);
-    border-radius: 0.4vh;
+  .range::-moz-range-thumb{
+    background-color: rgb(255, 255, 255);
+    width: 1.5vh;
+    height: 1.5vh;
+    border-radius: 50%;
   }
 
+  .range::-moz-range-progress{
+    background-color: rgb(182, 181, 181);
+  }
 `
