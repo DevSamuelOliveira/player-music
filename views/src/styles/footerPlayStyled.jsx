@@ -70,7 +70,7 @@ export default styled.footer`
 
   .range::-webkit-slider-thumb{
     -webkit-appearance: none;
-    background-color: rgb(150, 145, 145);
+    background-color: rgb(211, 205, 205);
     width: 2vh;
     height: 2vh;
     border-radius: 50%;

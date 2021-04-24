@@ -95,6 +95,9 @@ export default () => {
         <p className="titleArtist"> {getAlbumArtist()} </p>
       </div>
       <div className="playMenu">
+        <div className="btnsControlsContainer">
+
+        </div>
         <div className="progressContainer">
           <span className="time"> {timeNow} </span> <input className="range" type="range" step="any" min="0" max={getMaxTimeMusicInSeconds()}/> <span className="time"> {getTotalTimeMusic()} </span>
         </div>
