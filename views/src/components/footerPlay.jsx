@@ -49,15 +49,7 @@ function getTotalTimeMusic(){
 function getMaxTimeMusicInSeconds(){
   let music = document.getElementsByClassName('musicPlay')
 
-  let data = new Date(null)
-  data.setSeconds(music[0].duration)
-  let duracao = data.toISOString().substr(12, 8)
-  duracao = duracao.split('.')
-  duracao = duracao[0]
-  duracao = duracao.split(':')
-  duracao = duracao[1] + duracao[2]
-
-  return duracao
+  return music[0].duration
 }
 
 function getTimeNow(){
@@ -76,20 +68,24 @@ function getTimeNow(){
 
 export default () => {
 
-  const [seconds, setSeconds] = useState(0)
-  const [timeNow, setTimeNow] = useState(0)
+  const [timeNow, setTimeNow] = useState(0) 
 
   let time = setInterval(() =>{
     let music = document.getElementsByClassName('musicPlay')
-    setSeconds(music[0].currentTime)
     setTimeNow(getTimeNow())
 
-    document.getElementsByClassName('range')[0].value = music[0].currentTime
+    let range = document.getElementsByClassName('range')
+    range[0].value = music[0].currentTime
 
     if(music[0].paused){
       clearInterval(time)
     }
-  })
+
+    range[0].onchange = function(){
+      music[0].currentTime = range[0].value
+    }
+
+  }, 1000)
 
   return(
     <FooterPlayStyled>
@@ -100,7 +96,7 @@ export default () => {
       </div>
       <div className="playMenu">
         <div className="progressContainer">
-          <span> {timeNow} </span> <input className="range" type="range" step="any" min="0" max={getMaxTimeMusicInSeconds()}/> <span> {getTotalTimeMusic()} </span>
+          <span className="time"> {timeNow} </span> <input className="range" type="range" step="any" min="0" max={getMaxTimeMusicInSeconds()}/> <span className="time"> {getTotalTimeMusic()} </span>
         </div>
       </div>
     </FooterPlayStyled>

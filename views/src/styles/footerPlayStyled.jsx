@@ -10,6 +10,10 @@ export default styled.footer`
   bottom: 0;
   display: flex;
 
+  span{
+    display: inline-block;
+  }
+
   img{
     margin: 2.7vh;
   }
@@ -48,7 +52,7 @@ export default styled.footer`
     margin: auto 0;
   }
 
-  span{
+  .time{
     font-size: 70%;
     font-weight: 100;
     color:rgb(189, 189, 189)
