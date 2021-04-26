@@ -4,6 +4,7 @@ import {BsShuffle, BsArrowRepeat, BsSkipStartFill, BsSkipEndFill, BsPlayFill} fr
 import FooterPlayStyled from '../styles/footerPlayStyled'
 import infosMusics from '../infosMusics'
 import controls from './btnsControls'
+import stopAndPlay from './stopAndPlay'
 
 function getLogoMusicJpg(){
   let music = document.getElementsByClassName('musicPlay')
@@ -92,6 +93,8 @@ export default () => {
     }, 500)
   }
 
+  play()
+
   return(
     <FooterPlayStyled>
       <img src={getLogoMusicJpg()} alt="Logo music"/>
@@ -110,6 +113,7 @@ export default () => {
         <div className="progressContainer">
           <span className="time"> {timeNow} </span> <input className="range" type="range" step="any" min="0" max={getMaxTimeMusicInSeconds()}/> <span className="time"> {getTotalTimeMusic()} </span>
           {controls()}
+          {stopAndPlay()}
         </div>
       </div>
     </FooterPlayStyled>

@@ -8,4 +8,9 @@ export default function (){
     music[0].play()
     }
   }, 100)
+  
+  window.load = function(){
+    console.log("teste")
+  }
 }
+

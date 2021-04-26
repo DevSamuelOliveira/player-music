@@ -116,5 +116,6 @@ export default styled.footer`
 
   .range::-moz-range-progress{
     background-color: rgb(182, 181, 181);
+    border-radius: 50%;
   }
 `

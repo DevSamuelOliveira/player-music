@@ -1,10 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
-import Main from '../styles/mainStyled'
+import {BsPlayFill, BsPauseFill} from 'react-icons/bs'
+import Main from '../styles/homeStyled'
 import imgMostPlayed from '../components/img/maisTocadas.png'
 import imgTraining from '../components/img/treino.png'
 import Play from '../components/play'
+import ReactDOM from 'react-dom';
+
 
 const hour = new Date().getHours()
 const minute = new Date().getMinutes()
@@ -30,6 +33,15 @@ if (hour >= 6 && hour <= 12){
   msg = "Bem vindo, boa madrugada!"
 )
 
+function alter(){
+  document.getElementsByClassName('play')[0].remove()
+  
+  let btn = document.getElementsByClassName('btnMostPlayed')[0]
+
+  ReactDOM.render(<BsPauseFill/>, btn)
+
+}
+
 export default () =>
   <>
     <Main>
@@ -40,13 +52,13 @@ export default () =>
           <div className="mostPlayedContainer">
             <img src={imgMostPlayed} alt="Imagem das músicas mais tocadas"/>
             <p> As mais tocadas </p>
-            <a href="#" className="btnMostPlayed">&#9656;</a>
+            <a href="#" className="btnMostPlayed" onClick={alter}> <BsPlayFill className="play"/> </a>
           </div>
 
           <div className="ForTrainingContainer">
             <img src={imgTraining} alt="Imagem das músicas mais tocadas"/>
             <p> Para treinar </p>
-            <a href="#" className="btnForTraining">&#9656;</a>
+            <a href="#" className="btnForTraining"> <BsPlayFill/> </a>
           </div>
 
         </div>

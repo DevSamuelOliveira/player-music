@@ -22,6 +22,7 @@ export default styled.main`
       font-weight: bold;
       display: flex;
       margin-right: 10vh;
+      min-width: 280px;
     }
 
   .musicsApresentationContainer div:hover{
@@ -31,6 +32,7 @@ export default styled.main`
   .musicsApresentationContainer p{
     margin-left: 5vh;
     line-height: 13.5vh;
+    white-space: nowrap;
   }
 
   .musicsApresentationContainer a{
@@ -43,6 +45,11 @@ export default styled.main`
     font-size: 1.5em;
     color: white;
     text-decoration: none;
+  }
+
+  .musicsApresentationContainer a *{
+    position: relative;
+    bottom: 0.5vh;
   }
   
   .musicsApresentationContainer a:hover{

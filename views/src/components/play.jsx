@@ -3,14 +3,14 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import phoenixCoverTjBrownAndLunity from './music/phoenixLolAcousticTjbrownLunity.mp3'
 import FooterPlay from './footerPlay'
+import {BsPause} from 'react-icons/bs'
 
 window.onload = () =>{  
   document.getElementsByClassName('btnMostPlayed')[0].onclick = function(){
 
     ReactDOM.render(
-      <React.StrictMode>
         <FooterPlay/>
-      </React.StrictMode>, document.getElementById('footerPlay'))
+        , document.getElementById('footerPlay'))
 
     let music = document.getElementsByClassName('musicPlay')
     music[0].play(); 
