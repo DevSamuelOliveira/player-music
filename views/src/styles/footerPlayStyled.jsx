@@ -48,22 +48,53 @@ export default styled.footer`
     margin-left: 18vh;
   }
 
+  .btnsControlsContainer{
+    margin-top: 2vh;
+    margin-left: 20vh;
+    font-size: 1.2em;
+    color:rgb(143, 141, 141);
+  }
+
+  .btnsControls:hover{
+    color: white;
+  }
+
+  .btnsControls{
+    margin: 0 2vh;
+  }
+
+  .controlsPlay{
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1.5em;
+  }
+
+  .controlsPlay:hover{
+    position: relative;
+    top: 0.3vh;
+    color: black;
+  }
+
   .progressContainer{
     margin: auto 0;
+    display: flex;
   }
 
   .time{
     font-size: 70%;
     font-weight: 100;
-    color:rgb(189, 189, 189)
+    color:rgb(189, 189, 189);
+
   }
 
   .range{
     -webkit-appearance: none;
+    position: relative;
+    top: 1vh;
     margin: 0 1vh;
-    margin-top: 5vh;
     width: 75vh;
-    height: 1vh;
+    height: 0.6vh;
     background-color: rgb(85, 85, 85);
     border-radius: 1vh;
   }

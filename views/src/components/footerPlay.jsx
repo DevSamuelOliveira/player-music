@@ -1,7 +1,9 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React, {useState} from 'react'
+import {BsShuffle, BsArrowRepeat, BsSkipStartFill, BsSkipEndFill, BsPlayFill} from 'react-icons/bs'
 import FooterPlayStyled from '../styles/footerPlayStyled'
 import infosMusics from '../infosMusics'
+import controls from './btnsControls'
 
 function getLogoMusicJpg(){
   let music = document.getElementsByClassName('musicPlay')
@@ -70,22 +72,25 @@ export default () => {
 
   const [timeNow, setTimeNow] = useState(0) 
 
-  let time = setInterval(() =>{
-    let music = document.getElementsByClassName('musicPlay')
-    setTimeNow(getTimeNow())
+  function play(){
 
-    let range = document.getElementsByClassName('range')
-    range[0].value = music[0].currentTime
+    let time = setInterval(() =>{
+      let music = document.getElementsByClassName('musicPlay')
+      setTimeNow(getTimeNow())
 
-    if(music[0].paused){
-      clearInterval(time)
-    }
+      let range = document.getElementsByClassName('range')
+      range[0].value = music[0].currentTime
 
-    range[0].onchange = function(){
-      music[0].currentTime = range[0].value
-    }
+      if(music[0].paused){
+        clearInterval(time)
+      }
 
-  }, 1000)
+      range[0].onchange = function(){
+        music[0].currentTime = range[0].value
+      }
+
+    }, 500)
+  }
 
   return(
     <FooterPlayStyled>
@@ -95,11 +100,16 @@ export default () => {
         <p className="titleArtist"> {getAlbumArtist()} </p>
       </div>
       <div className="playMenu">
-        <div className="btnsControlsContainer">
-
-        </div>
+        <span className="btnsControlsContainer">
+          <BsShuffle className="btnsControls"/>
+          <BsSkipStartFill className="btnsControls"/>
+          <BsPlayFill onClick={play} className="btnsControls controlsPlay"/>    
+          <BsSkipEndFill className="btnsControls"/>
+          <BsArrowRepeat className="btnsControls"/>
+        </span>
         <div className="progressContainer">
           <span className="time"> {timeNow} </span> <input className="range" type="range" step="any" min="0" max={getMaxTimeMusicInSeconds()}/> <span className="time"> {getTotalTimeMusic()} </span>
+          {controls()}
         </div>
       </div>
     </FooterPlayStyled>

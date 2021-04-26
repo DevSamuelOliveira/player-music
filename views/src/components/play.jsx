@@ -13,7 +13,7 @@ window.onload = () =>{
       </React.StrictMode>, document.getElementById('footerPlay'))
 
     let music = document.getElementsByClassName('musicPlay')
-    // music[0].play(); 
+    music[0].play(); 
   }
 }
 
